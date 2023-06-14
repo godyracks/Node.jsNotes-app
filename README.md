@@ -1,0 +1,31 @@
+# Notes App
+
+This is a simple CRUD (Create, Read, Update, Delete) application for taking notes. It was built using Node.js, Express, and MongoDB. For templating, EJS and Bootstrap were used.
+
+## Features
+
+- Create, read, update, and delete notes
+- Rich text editor for notes
+- API to be used on front end
+- UI interactivity
+
+## Installation
+
+1. Clone the repository `https://github.com/GodyRacks/Node.jsNotes-app.git`
+2. Install dependencies using `npm install express mongoose axios nodemon body-parser morgan ejs dotenv`
+3. Start the server using `npm start`. you can check out the package_json file and see how i used nodemon to automatically refresh the server any time changes are made.//console logs
+
+## Usage
+
+1. Open your web browser and navigate to `http://localhost:3000`
+2. Register for an account or log in if you already have one
+3. Create, read, update, or delete notes as needed
+
+## Improvements
+- Predictive search for notes
+- Notes encryption for added security
+- Better responsive web design
+- Add more authentication options
+- Code improvement overall
+- - Flash messages for user feedback
+
