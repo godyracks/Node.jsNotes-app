@@ -24,9 +24,9 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 - Predictive search for notes
 - Notes encryption for added security
 - Better responsive web design
+-  Flash messages for user feedback
+- Account registration and login
 - Add more authentication options
 - Code improvement overall
-- Flash messages for user feedback
-- Account registration and login
 - Contributions are highly welcomed!
 
