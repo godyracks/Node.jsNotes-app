@@ -5,6 +5,7 @@ const bodyparser = require('body-parser')
 const path = require('path');
 
 
+
 const app = express();
 
 
@@ -26,9 +27,11 @@ app.use("/img",express.static(path.resolve(__dirname, "assets/img")) )
 app.use("/js",express.static(path.resolve(__dirname, "assets/js")) )
 
 app.get('/', (req, res) => {
+    
             res.render('index');
 });
 app.get('/add-note', (req, res) => {
+    
     res.render('add_note');
 });
 
