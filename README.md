@@ -18,8 +18,7 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 ## Usage
 
 1. Open your web browser and navigate to `http://localhost:3000`. OR when you type `npm start` in the terminal (VSCode) you will see `http://localhost:3000`. click on it it will open your application on the browser.
-2. Register for an account or log in if you already have one
-3. Create, read, update, or delete notes as needed
+2. Create, read, update, or delete notes as needed
 
 ## Improvements
 - Predictive search for notes
@@ -28,5 +27,6 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 - Add more authentication options
 - Code improvement overall
 - Flash messages for user feedback
+- Account registration and login
 - Contributions are highly welcomed!
 
