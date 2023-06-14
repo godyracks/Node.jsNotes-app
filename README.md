@@ -1,6 +1,6 @@
 # Notes App
 
-This is a simple CRUD (Create, Read, Update, Delete) application for taking notes. It was a project during 2nd Year internal Attachment on developing sample APIs. It was built using Node.js, Express, and MongoDB. For templating, EJS and Bootstrap were used.
+This is a simple CRUD (Create, Read, Update, Delete) application for taking notes. It was a project during 2nd Year internal Attachment on developing sample APIs(Laikipia University). It was built using Node.js, Express, and MongoDB. For templating, EJS and Bootstrap were used.
 
 ## Features
 
