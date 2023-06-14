@@ -8,6 +8,7 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 - Rich text editor for notes
 - API to be used on front end
 - UI interactivity
+- Dark Theme Toggle
 
 ## Installation
 
