@@ -10,9 +10,10 @@
   <!-- CONTENT -->
   <main>
     <h2>Add a Note</h2>
-    <form method="POST" id="new_note">
+    <form action="/add" method="POST">
         <input type="text" name="title" placeholder="Title" required>
-        <textarea name="content" placeholder="Content" required></textarea>
+        <div id="editor-add" style="height: 200px;"></div>
+        <input type="hidden" name="content" id="content-add" required>
         <button type="submit">Add Note</button>
     </form>
   </main>

@@ -1,9 +1,28 @@
-<!-- FOOTER -->
-<footer>
+  <!-- FOOTER -->
+  <footer>
     <p>&copy; 2023 Note App. All rights reserved.</p>
 </footer>
 
 <!-- SCRIPTS -->
-<script src="/js/script.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    // Initialize Quill for the "Add a Note" form
+    var quillAdd = new Quill('#editor-add', {
+        theme: 'snow'
+    });
+    var contentAdd = document.getElementById('content-add');
+    quillAdd.on('text-change', function() {
+        contentAdd.value = quillAdd.root.innerHTML;
+    });
+
+    // Initialize Quill for the "Edit a Note" form
+    var quillEdit = new Quill('#editor-edit', {
+        theme: 'snow'
+    });
+    var contentEdit = document.getElementById('content-edit');
+    quillEdit.on('text-change', function() {
+        contentEdit.value = quillEdit.root.innerHTML;
+    });
+</script>
 </body>
 </html>

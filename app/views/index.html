@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note App</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <style>
         /* Custom Styles */
         body {
@@ -77,7 +78,8 @@
         <h2>Add a Note</h2>
         <form action="/add" method="POST">
             <input type="text" name="title" placeholder="Title" required>
-            <textarea name="content" placeholder="Content" required></textarea>
+            <div id="editor-add" style="height: 200px;"></div>
+            <input type="hidden" name="content" id="content-add" required>
             <button type="submit">Add Note</button>
         </form>
 
@@ -85,20 +87,20 @@
         <form action="/edit" method="POST">
             <input type="hidden" name="noteId" value="">
             <input type="text" name="title" placeholder="Title" required>
-            <textarea name="content" placeholder="Content" required></textarea>
+            <div id="editor-edit" style="height: 200px;"></div>
+            <input type="hidden" name="content" id="content-edit" required>
             <button type="submit">Update Note</button>
         </form>
 
         <!-- Additional content -->
-<section>
-    <h2>Saved Notes</h2>
-  
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
-</section>
+        <section>
+            <h2>Saved Notes</h2>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -107,6 +109,25 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="/js/script.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        // Initialize Quill for the "Add a Note" form
+        var quillAdd = new Quill('#editor-add', {
+            theme: 'snow'
+        });
+        var contentAdd = document.getElementById('content-add');
+        quillAdd.on('text-change', function() {
+            contentAdd.value = quillAdd.root.innerHTML;
+        });
+
+        // Initialize Quill for the "Edit a Note" form
+        var quillEdit = new Quill('#editor-edit', {
+            theme: 'snow'
+        });
+        var contentEdit = document.getElementById('content-edit');
+        quillEdit.on('text-change', function() {
+            contentEdit.value = quillEdit.root.innerHTML;
+        });
+    </script>
 </body>
 </html>
