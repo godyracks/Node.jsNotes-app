@@ -1,0 +1,26 @@
+
+<!--Include Header-->
+
+<%-include('include/_header')%>
+
+<!--/Include Header-->
+
+
+
+<main>
+<h2>Edit a Note</h2>
+<form action="/edit" method="POST">
+    <input type="hidden" name="noteId" value="">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="content" placeholder="Content" required></textarea>
+    <button type="submit">Update Note</button>
+</form>
+
+</main>
+
+
+    <!--Include footer-->
+
+    <%-include('include/_footer')%>
+
+    <!--/Include footer-->
