@@ -26,22 +26,8 @@ app.use("/css",express.static(path.resolve(__dirname, "assets/css")) )
 app.use("/img",express.static(path.resolve(__dirname, "assets/img")) )
 app.use("/js",express.static(path.resolve(__dirname, "assets/js")) )
 
-app.get('/', (req, res) => {
-    
-            res.render('index');
-});
-app.get('/add-note', (req, res) => {
-    
-    res.render('add_note');
-});
-
-app.get('/edit-note', (req, res) => {
-    res.render('edit_note');
-});
-
-app.get('/saved-note', (req, res) => {
-    res.render('saved_note');
-});
+//load routes
+app.use('/', require('./server/routes/router'))
 
 
 app.listen(PORT, ()=>{
