@@ -2,26 +2,40 @@ const express = require('express');
 
 const route = express.Router();
 
+const services = require("../services/render");
 
 
 
+/**
+ * @description Root Route
+ * @method GET /
+ */
 
-route.get('/', (req, res) => {
-    
-    res.render('index');
-});
-route.get('/add-note', (req, res) => {
 
-res.render('add_note');
-});
+route.get('/', services.homeRoutes);
 
-route.get('/edit-note', (req, res) => {
-res.render('edit_note');
-});
+/**
+ * @description add notes
+ * @method GET /add-note
+ */
 
-route.get('/saved-note', (req, res) => {
-res.render('saved_note');
-});
+
+route.get('/add-note', services.add_note);
+
+
+/**
+ * @description  edit notes
+ * @method GET /edit-note
+ */
+
+route.get('/edit-note', services.edit_note );
+
+/**
+ * @description  saved notes
+ * @method GET /saved-note
+ */
+
+route.get('/saved-note', services.saved_note);
 
 
 module.exports = route
