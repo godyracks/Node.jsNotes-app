@@ -1,3 +1,4 @@
+
 <!--Include Header-->
 <%- include('include/_header') %>
 <!--/Include Header-->
@@ -6,13 +7,17 @@
   <!-- Additional content -->
   <section>
     <h2>Saved Notes</h2>
+    
     <ul class="saved-notes-list">
       <% for (var i = 0; i < usernotes.length; i++) { %>
-        <li>
-          <div class="note-title">
-            <%= usernotes[i].title %>
-            <br />
-            <%- usernotes[i].content %>
+        <li class="note-item">
+          <div class="note-content">
+            <div class="note-title">
+              <%= usernotes[i].title %>
+            </div>
+            <div class="note-body">
+              <%- usernotes[i].content %>
+            </div>
           </div>
           <div class="note-actions">
             <a href="/edit-note?id=<%= usernotes[i]._id %>" class="note-action" title="Update"><i class="material-icons">edit</i></a>
@@ -34,10 +39,16 @@
       $(".delete-note").click(function(e) {
         e.preventDefault();
         var noteId = $(this).data("id");
-        deleteNote(noteId);
+        confirmDelete(noteId);
       });
     }
   });
+
+  function confirmDelete(noteId) {
+    if (confirm("Are you sure you want to delete this note?")) {
+      deleteNote(noteId);
+    }
+  }
 
   function deleteNote(noteId) {
     $.ajax({
@@ -56,4 +67,6 @@
       }
     });
   }
+
+ 
 </script>

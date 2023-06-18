@@ -1,137 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 :root {
-    --background-color: #f5f5f5;
-    --header-background-color: #4285F4;
-    --header-color: #fff;
-    --main-background-color: #fff;
-    --main-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    --h2-color: #4285F4;
-    --input-border-color: #ccc;
-    --button-background-color: #4285F4;
-    --button-color: #fff;
-    --footer-background-color: #f5f5f5;
-    --footer-color: #888;
-  }
+  --background-color: #f5f5f5;
+  --header-background-color: #4285F4;
+  --header-color: #fff;
+  --main-background-color: #fff;
+  --main-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --h2-color: #4285F4;
+  --input-border-color: #ccc;
+  --button-background-color: #4285F4;
+  --button-color: #fff;
+  --footer-background-color: #f5f5f5;
+  --footer-color: #888;
+}
 
-  .dark-theme {
-    --background-color: #333;
-    --header-background-color: #222;
-    --header-color: #fff;
-    --main-background-color: #817773;
-    --main-box-shadow: 0 0 10px #faf4f41a;
-    --h2-color: #4285F4;
-    --input-border-color: #f7eeee;
-    --button-background-color: #4285F4;
-    --button-color: #fff;
-    --footer-background-color: #222;
-    --footer-color: #aaa;
-  }
+.dark-theme {
+  --background-color: #222;
+  --header-background-color: #333;
+  --header-color: #fff;
+  --main-background-color: #817773;
+  --main-box-shadow: 0 0 10px #faf4f41a;
+  --h2-color: #4285F4;
+  --input-border-color: #f7eeee;
+  --button-background-color: #4285F4;
+  --button-color: #fff;
+  --footer-background-color: #222;
+  --footer-color: #aaa;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-  }
+body {
+  font-family: 'PT Sans', sans-serif;
+  /* background-color: var(--background-color); */
+  margin: 0;
+  padding: 0
+  ;
+  background-image: url(../img/note.png);
+  background-size: cover;
+  background-position: center;
+}
 
-  header {
-    background-color: var(--header-background-color);
-    color: var(--header-color);
-    padding: 20px;
-    text-align: center;
-  }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--header-background-color);
+  color: var(--header-color);
+  padding: 20px;
+  text-align: center;
+}
+#app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  /* background: none; */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+#app-header.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #3d023b;
+  /* Additional styling for the scrolled header */
+}
+main {
+  padding-top: 120px; /* Adjust the padding-top value based on the header height */
+  max-width: 600px;
+  margin: 20px auto;
+  margin-top: 100px;
+  padding: 20px;
+  background-color: var(--main-background-color);
+  box-shadow: var(--main-box-shadow);
+}
 
-  main {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--main-background-color);
-    box-shadow: var(--main-box-shadow);
-  }
 
-  form {
-    margin-bottom: 20px;
-  }
 
-  h2 {
-    margin-top: 0;
-    font-size: 24px;
-    color: var(--h2-color);
-  }
 
-  input[type="text"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--input-border-color);
-    border-radius: 4px;
-    resize: vertical;
-  }
+form {
+  margin-bottom: 20px;
+}
 
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Adjustments for the saved notes title and toggle theme icon */
+h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: var(--h2-color);
+  position: sticky;
+  top: 100px; /* Adjust the top value based on the header height */
+  background-color: var(--main-background-color);
+  padding: 10px;
+  z-index: 2;
+}
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.button-container {
+  /* width: 490px;
+  margin: 0 auto; */
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .button-container a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: var(--button-background-color);
-    color: var(--button-color);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .button-container a:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
-  .saved-notes-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+.saved-notes-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .saved-notes-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
+.note-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 
-  .note-title {
-    flex-grow: 1;
-  }
+.note-content {
+  margin-bottom: 10px;
+}
 
-  .note-actions {
-    display: flex;
-    gap: 10px;
-  }
+.note-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 
-  .note-action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: var(--button-background-color);
-    color: var(--button-color);
-    padding: 6px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
+.note-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  footer {
-    background-color: var(--footer-background-color);
-    color: var(--footer-color);
-    text-align: center;
-    padding: 10px;
-  }
+.note-body {
+  white-space: pre-wrap;
+}
+
+.note-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--footer-background-color);
+  color: var(--footer-color);
+  text-align: center;
+  padding: 10px;
+}
