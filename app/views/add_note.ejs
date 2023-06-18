@@ -12,8 +12,7 @@
     <h2>Add a Note</h2>
     <form action="/api/notes" method="POST" id="add_note">
         <input type="text" name="title" placeholder="Title" required>
-        <div id="editor-add" style="height: 200px;"></div>
-        <input type="hidden" name="content" id="content-add" required>
+        <textarea name="content" id="add-editor" style="height: 200px;"></textarea>
         <button type="submit">Add Note</button>
     </form>
     
@@ -24,3 +23,15 @@
 <%-include('include/_footer')%>
 
 <!--/Include footer-->
+<script>
+ClassicEditor
+  .create(document.querySelector('#add-editor'))
+  .then(editor => {
+    console.log('CKEditor initialized successfully');
+  })
+  .catch(error => {
+    console.error('Error initializing CKEditor:', error);
+  });
+
+</script>
+

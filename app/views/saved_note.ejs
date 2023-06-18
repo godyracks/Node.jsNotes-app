@@ -13,11 +13,11 @@
                
             <%= usernotes[i].title %>
             <br />
-            <!-- <%= usernotes[i].content %> -->
+            <%- usernotes[i].content  %>
         </div>
           
           <div class="note-actions">
-            <a href="#" class="note-action" title="Update"><i class="material-icons">edit</i></a>
+            <a href="/edit-note?id=<%= usernotes[i]._id %>" class="note-action" title="Update"><i class="material-icons">edit</i></a>
             <a href="#" class="note-action" title="Delete"><i class="material-icons">delete</i></a>
           </div>
         </li>

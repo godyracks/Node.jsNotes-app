@@ -10,7 +10,13 @@ exports.add_note = (req, res) =>{
     res.render('add_note');
 }
 exports.edit_note = (req, res) => {
-    res.render('edit_note');
+     axios.get('http://localhost:3000/api/notes/' , {params:{id:req.query.id}})
+    .then(function(usernotesdata){
+        res.render('edit_note', {usernotes: usernotesdata.data});
+    })
+    .catch(err=>{
+        res.send(err)
+    })
 }
 
 exports.saved_note = (req,res) =>{

@@ -9,11 +9,12 @@
 
 <main>
     <h2>Edit a Note</h2>
-        <form action="/edit" method="POST">
-            <input type="hidden" name="noteId" value="">
-            <input type="text" name="title" placeholder="Title" required>
-            <div id="editor-edit" style="height: 200px;"></div>
-            <input type="hidden" name="content" id="content-edit" required>
+        <form action="/edit" method="POST" id="edit_note">
+            <input type="hidden" name="noteId" value="<%= usernotes._id %>">
+            <input type="text" name="title" placeholder="Title" required  value="<%= usernotes.title %>">
+            <textarea name="content" id="editor-edit" style="height: 200px;" ><%= usernotes.content %></textarea>
+            <input   name="content" id="content-edit" required   style="display: none;">
+
             <button type="submit">Update Note</button>
         </form>
 </main>
@@ -24,3 +25,13 @@
     <%-include('include/_footer')%>
 
     <!--/Include footer-->
+    <script>
+    ClassicEditor
+  .create(document.querySelector('#editor-edit'))
+  .then(editor => {
+    console.log('CKEditor initialized successfully');
+  })
+  .catch(error => {
+    console.error('Error initializing CKEditor:', error);
+  });
+</script>
