@@ -10,15 +10,13 @@
       <% for (var i = 0; i < usernotes.length; i++) { %>
         <li>
           <div class="note-title">
-               
             <%= usernotes[i].title %>
             <br />
-            <%- usernotes[i].content  %>
-        </div>
-          
+            <%- usernotes[i].content %>
+          </div>
           <div class="note-actions">
             <a href="/edit-note?id=<%= usernotes[i]._id %>" class="note-action" title="Update"><i class="material-icons">edit</i></a>
-            <a href="#" class="note-action" title="Delete"><i class="material-icons">delete</i></a>
+            <a class="note-action delete-note" title="Delete" data-id="<%= usernotes[i]._id %>"><i class="material-icons">delete</i></a>
           </div>
         </li>
       <% } %>
@@ -29,3 +27,33 @@
 <!--Include footer-->
 <%- include('include/_footer') %>
 <!--/Include footer-->
+
+<script>
+  $(document).ready(function() {
+    if (window.location.pathname === "/saved-note") {
+      $(".delete-note").click(function(e) {
+        e.preventDefault();
+        var noteId = $(this).data("id");
+        deleteNote(noteId);
+      });
+    }
+  });
+
+  function deleteNote(noteId) {
+    $.ajax({
+      url: "/api/notes/" + noteId,
+      type: "DELETE",
+      success: function(response) {
+        // Note deleted successfully
+        // You can perform any necessary actions after deleting the note
+        alert("Note Deleted Successfully!");
+        // Refresh the page or update the notes list
+        location.reload();
+      },
+      error: function(error) {
+        // Error occurred while deleting the note
+        console.error("Error deleting note:", error);
+      }
+    });
+  }
+</script>

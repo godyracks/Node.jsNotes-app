@@ -81,7 +81,7 @@ exports.update =(req, res)=>{
         }
     })
     .catch(err=>{
-        res.status(500).send({message:"Error upate note content!"})
+        res.status(500).send({message:"Error update note content!"})
     })
 
 }

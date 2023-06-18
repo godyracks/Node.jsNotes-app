@@ -1,6 +1,8 @@
 $("#add_note").submit(function(event){
   alert("Data Inserted Successfully!")
 });
+
+
   
   
   
@@ -14,3 +16,4 @@ $("#add_note").submit(function(event){
   });
 
   //
+  
