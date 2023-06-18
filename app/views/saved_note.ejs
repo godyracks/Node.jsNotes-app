@@ -1,26 +1,30 @@
-
-
 <!--Include Header-->
-
-<%-include('include/_header')%>
-
+<%- include('include/_header') %>
 <!--/Include Header-->
 
+<main>
+  <!-- Additional content -->
+  <section>
+    <h2>Saved Notes</h2>
+    <ul class="saved-notes-list">
+      <% for (var i = 0; i < usernotes.length; i++) { %>
+        <li>
+          <div class="note-title">
+            <%= usernotes[i].title %>
+            <br />
+            <!-- <%= usernotes[i].content %> -->
+        </div>
+          
+          <div class="note-actions">
+            <a href="#" class="note-action" title="Update"><i class="material-icons">edit</i></a>
+            <a href="#" class="note-action" title="Delete"><i class="material-icons">delete</i></a>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  </section>
+</main>
 
-       <main>
-        <!-- Additional content -->
-        <section>
-            <h2>Saved Notes</h2>
-            <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ul>
-        </section>
-        </main>
-
-        <!--Include footer-->
-
-<%-include('include/_footer')%>
-
+<!--Include footer-->
+<%- include('include/_footer') %>
 <!--/Include footer-->

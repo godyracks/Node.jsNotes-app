@@ -3,6 +3,9 @@ const express = require('express');
 const route = express.Router();
 
 const services = require("../services/render");
+const controller = require('../controller/controller');
+const sanitizeHtml = require('sanitize-html');
+
 
 
 
@@ -36,6 +39,13 @@ route.get('/edit-note', services.edit_note );
  */
 
 route.get('/saved-note', services.saved_note);
+
+
+//API
+route.post('/api/notes', controller.create);
+route.get('/api/notes', controller.find);
+route.put('/api/notes/:id', controller.update);
+route.delete('/api/notes/:id', controller.delete);
 
 
 module.exports = route

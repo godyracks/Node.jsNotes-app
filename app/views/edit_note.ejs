@@ -9,13 +9,13 @@
 
 <main>
     <h2>Edit a Note</h2>
-    <form action="/add" method="POST">
-        <input type="text" name="title" placeholder="Title" required>
-        <div id="editor-add" style="height: 200px;"></div>
-        <input type="hidden" name="content" id="content-add" required>
-        <button type="submit">Edit Note</button>
-    </form>
-
+        <form action="/edit" method="POST">
+            <input type="hidden" name="noteId" value="">
+            <input type="text" name="title" placeholder="Title" required>
+            <div id="editor-edit" style="height: 200px;"></div>
+            <input type="hidden" name="content" id="content-edit" required>
+            <button type="submit">Update Note</button>
+        </form>
 </main>
 
 
