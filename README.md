@@ -9,6 +9,9 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 - API to be used on front end
 - UI interactivity
 - Dark Theme Toggle
+  ## ScreenShots
+  ![Screenshot 1](screenshots/screenshot0.png)
+*Home UI*
 
 ## Installation
 
