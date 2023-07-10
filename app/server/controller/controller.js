@@ -1,5 +1,5 @@
 var userNotes = require('../model/model');
-const sanitizeHtml = require('sanitize-html');
+
 
 
 //create and save new note
