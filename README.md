@@ -27,7 +27,7 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 1. Clone the repository `https://github.com/GodyRacks/Node.jsNotes-app.git`
 2. `cd app` then follow step 3
 3. Install dependencies using `npm install express mongoose axios nodemon body-parser morgan ejs dotenv`
-4. Create a mongodb atlas cluster, free preferably then obtain password to usi on your Mongo_URI, see edited `./app/config.env` as an example.
+4. Create a mongodb atlas cluster, free preferably then obtain password to use on your Mongo_URI, see edited `./app/config.env` as an example.
 5. Start the server using `npm start`. you can check out the package_json file and see how i used nodemon to automatically refresh the server any time changes are made.//console logs
 
 ## Usage
