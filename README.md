@@ -10,7 +10,7 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 - UI interactivity
 - Dark Theme Toggle
   ## ScreenShots
-  ![Screenshot 1](screenshots/screenshot0.png)
+  ![Screenshot 1](./screenshots/screenshot0.png)
 *Home UI*
 
 ## Installation
