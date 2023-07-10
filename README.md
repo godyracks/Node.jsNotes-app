@@ -12,6 +12,15 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
   ## ScreenShots
   ![Screenshot 1](./screenshots/Screenshot0.png)
 *Home UI*
+ ![Screenshot 2](./screenshots/Screenshot1.png)
+  *Add A Note*
+ ![Screenshot 3](./screenshots/Screenshot3.png)
+  *Saved/Read A Note*
+
+ ![Screenshot 4](./screenshots/Screenshot5.png)
+*Update/ Edit a Note*
+ ![Screenshot 5](./screenshots/Screenshot6.png)
+*Dark Mode*
 
 ## Installation
 
