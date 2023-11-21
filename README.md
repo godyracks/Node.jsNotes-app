@@ -24,11 +24,20 @@ This is a simple CRUD (Create, Read, Update, Delete) application for taking note
 
 ## Installation
 
-1. Clone the repository `https://github.com/GodyRacks/Node.jsNotes-app.git`
-2. `cd app` then follow step 3
-3. Install dependencies using `npm install express mongoose axios nodemon body-parser morgan ejs dotenv`
-4. Create a mongodb atlas cluster, free preferably then obtain password to use on your Mongo_URI, see edited `./app/config.env` as an example.
-5. Start the server using `npm start`. you can check out the package_json file and see how i used nodemon to automatically refresh the server any time changes are made.//console logs
+1. Clone the repository
+2. ```bash
+   git clone https://github.com/GodyRacks/Node.jsNotes-app.git
+3. Navigate to app directory
+   ```bash
+   cd app
+4. Install dependencies
+   ```bash
+   npm install express mongoose axios nodemon body-parser morgan ejs dotenv
+5. Create a mongodb atlas cluster, free preferably then obtain password to use on your Mongo_URI, see edited `./app/config.env` as an example.
+6. Start the server using
+   ```bash
+   npm start
+you can check out the package_json file and see how i used nodemon to automatically refresh the server any time changes are made.//console logs
 
 ## Usage
 
